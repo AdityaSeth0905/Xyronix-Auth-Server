@@ -8,3 +8,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Xyronix Auth Server")
 
 app.include_router(auth_router)
+
+@app.get("/")
+def root():
+    return {"message": "Xyronix Auth Server is running!"}
